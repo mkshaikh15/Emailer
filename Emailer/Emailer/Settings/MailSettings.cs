@@ -14,5 +14,7 @@ namespace Emailer.Settings
         public int Port { get; set; }
         public int RetryTimer { get; set; }
         public int RetryCount { get; set; }
+        public string LogPath { get; set; }
+        public string LogFileName { get; set; }
     }
 }
