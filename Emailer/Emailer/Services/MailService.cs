@@ -80,7 +80,7 @@ namespace Emailer.Services
                 {
                     //Email sender, recipient, subject, and body
                     StringBuilder sb = new StringBuilder();
-                    String logText = sb.Append("Email failed to send at ").AppendLine(DateTime.Now.ToString()).Append("\tSender: ").AppendLine(_mailSettings.Email).Append("\tRecipient: ").AppendLine(mailRequest.ToEmail).Append("\tSubject: ").AppendLine(mailRequest.Subject).Append("\t").AppendLine(mailRequest.Body).ToString();
+                    String logText = sb.Append("Email failed to send at ").Append(DateTime.Now.ToString()).Append(" after ").Append(++counter).AppendLine(" attempt(s).").Append("\tSender: ").AppendLine(_mailSettings.Email).Append("\tRecipient: ").AppendLine(mailRequest.ToEmail).Append("\tSubject: ").AppendLine(mailRequest.Subject).Append("\t").AppendLine(mailRequest.Body).ToString();
                     //Console.WriteLine("Email failed to send. Trying again after " + ++counter + " attempt(s)");
                     Logger.Log(logText, _mailSettings.LogPath, _mailSettings.LogFileName);
                     await Task.Delay(_mailSettings.RetryTimer);
