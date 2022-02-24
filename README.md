@@ -22,7 +22,7 @@ Libraries/Nuget Packages utilized in this project: .
 
     public async Task SendEmailAsync(MailRequest mailRequest);
 
-#
+##
     Call it by: await SendEmailAsync(MailRequest mailRequest)
     It is populated through form-data from a controller. See Project README.md. Make sure to reference the DLL from this library to test it out.
     
