@@ -79,7 +79,7 @@ namespace Emailer.Services
                 catch (Exception)
                 {
                     //Email sender, recipient, subject, and body
-                    StringBuilder sb = new StringBuilder();
+                    StringBuilder sb = new();
                     String logText = sb.Append("Email failed to send at ").Append(DateTime.Now.ToString()).Append(" after ").Append(++counter).AppendLine(" attempt(s).").Append("\tSender: ").AppendLine(_mailSettings.Email).Append("\tRecipient: ").AppendLine(mailRequest.ToEmail).Append("\tSubject: ").AppendLine(mailRequest.Subject).Append("\t").AppendLine(mailRequest.Body).ToString();
                     //Console.WriteLine("Email failed to send. Trying again after " + ++counter + " attempt(s)");
                     Logger.Log(logText, _mailSettings.LogPath, _mailSettings.LogFileName);
@@ -89,7 +89,7 @@ namespace Emailer.Services
                     {
                         message.Dispose();
                         smtp.Disconnect(true);
-                        Logger.Log("Stopped sending email after: " + counter + " attempts\n", _mailSettings.LogPath, _mailSettings.LogFileName);
+                        Logger.Log("\tStopped sending email after: " + counter + " attempts\n", _mailSettings.LogPath, _mailSettings.LogFileName);
                     }
                 }
 
