@@ -10,7 +10,7 @@ It can easily be modified to work with a GUI/Windows Form Application by utilizi
 Simply get rid of the HttpPost and [FromForm] before the MailRequest object is populated when the POST method is sent.
 Instead, call the [HttpPost] function on a button click and populate the MailRequest object from the form fields.
 
-Libraries referenced in this class: .
+Libraries/Nuget Packages utilized in this project: .
 
 `Logger.dll` simple DLL created to create Logs to use, see Logging project README.md on how to use
 
@@ -22,12 +22,8 @@ Libraries referenced in this class: .
     Call it by: await SendEmailAsync(MailRequest mailRequest)
     It is populated through form-data from a controller. See Project README.md. Make sure to reference the DLL from this library to test it out.
     
-## Run the app
+## Compile and reference the DLL
 
-    unicorn -p 7000
-
-## Run the tests
-
-    ./run-tests.sh
-
-# Rreter
+    Pull this project or import it into Visual Studio (I used 2019)
+    Build the project, make sure you have the Libraries that are utilized in this project
+    Libraries: MailKit, Microsoft.Extensions.Options, and Logger.DLL (See Logger project README.md)
