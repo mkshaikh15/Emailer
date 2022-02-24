@@ -1,4 +1,4 @@
-# Code Project - Emailer.DLL class files
+# Emailer - Emailer.DLL class files
 
 This is a web API which sends emails through form-data retrieved from a controller.
 
