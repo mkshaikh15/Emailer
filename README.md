@@ -16,6 +16,8 @@ Libraries/Nuget Packages utilized in this project: .
 
 `MailKit` standard Emailing library,  System.Net.Mail functionality could be utilized in place of this, but after doing research I decided this was the best practice to go with
 
+'Microsoft.Extensions.Options" Had a confliction with Swashbuckle.AspNetCore and Micrsoft.AspNetCore. Utilizing the Options extension made sure Project and Emailer are using the same Options<T> pattern
+    
 ## Usage
 
     public async Task SendEmailAsync(MailRequest mailRequest);
