@@ -77,7 +77,7 @@ namespace Emailer.Services
                     break;
                 }
                 catch (Exception)
-                {
+                {//git
                     //Email sender, recipient, subject, and body
                     StringBuilder sb = new();
                     String logText = sb.Append("Email failed to send at ").Append(DateTime.Now.ToString()).Append(" after ").Append(++counter).AppendLine(" attempt(s).").Append("\tSender: ").AppendLine(_mailSettings.Email).Append("\tRecipient: ").AppendLine(mailRequest.ToEmail).Append("\tSubject: ").AppendLine(mailRequest.Subject).Append("\t").AppendLine(mailRequest.Body).ToString();
