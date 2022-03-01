@@ -6,10 +6,6 @@ This repo contains the necessary files for the Emailer.DLL to compile.
 
 The Emailer also writes logs, the logger settings can be configured in AppSettings.json (IE, retry N amount of times after every X amount of milliseconds)
 
-It can easily be modified to work with a GUI/Windows Form Application by utilizing an action/event listener on a button click "send"
-Simply get rid of the HttpPost and [FromForm] before the MailRequest object is populated when the POST method is sent.
-Instead, call the [HttpPost] function on a button click and populate the MailRequest object from the form fields.
-
 Required Libraries/NuGet Packages utilized in this project: .
 
 `Logger.dll` simple DLL created to create Logs to use, see Logging project README.md on how to use
@@ -31,7 +27,8 @@ Required Libraries/NuGet Packages utilized in this project: .
 
     public async Task SendEmailAsync(MailRequest mailRequest);
 
+    This Task is requested in the API Controller whenever requested
     Call it by: await SendEmailAsync(MailRequest mailRequest)
-    It is populated through form-data from a controller. See Project README.md.
+    The mailRequest object is populated through form-data from a controller. See Project README.md.
     Make sure to reference the DLL from this library to test it out.
 
